@@ -27,11 +27,10 @@ var images = document.querySelectorAll(".gallery img");
 images.forEach(function (image) {
   image.addEventListener("click", function (event) {
     event.preventDefault();
-
-    const lightbox = new SimpleLightbox(".gallery a", {
-      captionsData: "alt",
-      captionDelay: 250,
-    });
+  });
+  const lightbox = new SimpleLightbox(".gallery a", {
+    captionsData: "alt",
+    captionDelay: 250,
   });
 });
 console.log(galleryItems);
