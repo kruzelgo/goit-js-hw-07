@@ -13,7 +13,7 @@ const gallery = galleryItems.map((item) => {
 
   link.href = item.original;
   image.src = item.preview;
-
+  image.dataset.source = item.original;
   image.alt = item.description;
 
   link.appendChild(image);
