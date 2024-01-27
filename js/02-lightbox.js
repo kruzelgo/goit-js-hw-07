@@ -15,6 +15,7 @@ const gallery = galleryItems.map((item) => {
   image.src = item.preview;
   image.dataset.source = item.original;
   image.alt = item.description;
+  image.title = item.description;
 
   link.appendChild(image);
   galleryList.appendChild(link);
@@ -23,14 +24,9 @@ const gallery = galleryItems.map((item) => {
 
 imagesGallery.append(...gallery);
 
-var images = document.querySelectorAll(".gallery img");
-images.forEach(function (image) {
-  image.addEventListener("click", function (event) {
-    event.preventDefault();
-  });
-  const lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-  });
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
 });
+
 console.log(galleryItems);
